@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "@google/genai": "^1.11.0",
+    "@types/react": "^19.1.11",
+    "@types/react-dom": "^19.1.7",
     "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^4.7.0",
     "canvas-confetti": "^1.9.3",
     "jszip": "3.10.1",
     "react": "^19.1.0",
@@ -22,9 +25,19 @@
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   },
-  "keywords": ["ai", "web-development", "code-generation", "gemini", "react", "typescript"],
+  "keywords": [
+    "ai",
+    "web-development",
+    "code-generation",
+    "gemini",
+    "react",
+    "typescript"
+  ],
   "license": "MIT"
 }

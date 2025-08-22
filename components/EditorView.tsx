@@ -1,6 +1,9 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
-import type { GeneratedCode, ChatMessage } from '../types';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import CodeOutput from './CodeOutput';
+import geminiService from '../services/geminiService';
+import ZeroCodeLogo from '../images/ZeroCode_logo.png';
+import ZeroCodeSymbol from '../images/ZeroCode_symbol.png';
+import { ChatMessage, GeneratedCode } from '../types';
 
 // Icons
 const SendIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>);
@@ -8,7 +11,7 @@ const AttachmentIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className=
 const NewChatIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>);
 const UserIcon = () => (<div className="h-8 w-8 rounded-full bg-teal-500 flex-shrink-0 flex items-center justify-center font-bold text-white text-sm">U</div>);
 const BotIcon = () => (
-    <img src="/images/ZeroCode_symbol.png" alt="ZeroCode Symbol" className="h-8 w-8" />
+    <img src={ZeroCodeSymbol} alt="ZeroCode Symbol" className="h-8 w-8" />
 );
 const FileIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 flex-shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>);
 const FolderIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 flex-shrink-0 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>);
@@ -342,7 +345,7 @@ export const ChatView: React.FC<ChatViewProps> = ({ messages, onSendMessage, isL
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            <img src="/images/ZeroCode_logo.png" alt="ZeroCode Logo" className="h-10 w-auto" />
+            <img src={ZeroCodeLogo} alt="ZeroCode Logo" className="h-10 w-auto" />
             <div className="text-sm text-brand-subtle-text">
               <span className="text-brand-text font-medium">Project Builder</span>
               <span className="mx-2">•</span>

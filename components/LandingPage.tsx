@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import type { AuthState } from '../types';
 import { AuthModal } from './AuthModal';
+import { User } from '../types';
+import ZeroCodeLogo from '../images/ZeroCode_logo.png';
 import { authService } from '../services/authService';
 
 interface LandingPageProps {
@@ -106,7 +107,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onAuthenticated }) => 
       {/* Navigation */}
       <nav className="relative z-10 flex items-center justify-between p-6">
         <div className="flex items-center space-x-3">
-          <img src="/images/ZeroCode_logo.png" alt="ZeroCode" className="h-10 w-auto" />
+          <img src={ZeroCodeLogo} alt="ZeroCode" className="h-10 w-auto" />
           <span className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-purple-400 bg-clip-text text-transparent">
             ZeroCode
           </span>

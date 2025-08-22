@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { User } from '../types';
+import ZeroCodeLogo from '../images/ZeroCode_logo.png';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
@@ -59,7 +61,7 @@ export const Header: React.FC<HeaderProps> = ({
             )}
             
             <div className="flex items-center space-x-2">
-              <img src="/images/ZeroCode_logo.png" alt="ZeroCode" className="h-8 w-auto" />
+              <img src={ZeroCodeLogo} alt="ZeroCode" className="h-8 w-auto" />
               <span className="text-xl font-bold bg-gradient-to-r from-teal-400 to-purple-400 bg-clip-text text-transparent">
                 ZeroCode
               </span>
